@@ -1,4 +1,4 @@
-const artists = [
+const artist = [
   {
     "id": 0,
     "name": "Amedeo Modigliani",
@@ -209,15 +209,59 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
+const firstArtistsName = [
+  {
+    "id": 0,
+    "name": "Amedeo Modigliani",
+    "years": "1884 - 1920",
+    "genre": "Expressionism",
+    "nationality": "Italian",
+    "bio": "Amedeo Clemente Modigliani (Italian pronunciation: [ameˈdɛːo modiʎˈʎaːni]; 12 July 1884 – 24 January 1920) was an Italian Jewish painter and sculptor who worked mainly in France. He is known for portraits and nudes in a modern style characterized by elongation of faces, necks, and figures that were not received well during his lifetime but later found acceptance. Modigliani spent his youth in Italy, where he studied the art of antiquity and the Renaissance. In 1906 he moved to Paris, where he came into contact with such artists as Pablo Picasso and Constantin Brâncuși. By 1912 Modigliani was exhibiting highly stylized sculptures with Cubists of the Section d'Or group at the Salon d'Automne.",
+    "wikipedia": "http://en.wikipedia.org/wiki/Amedeo_Modigliani",
+    "paintings": 193
+  },
+  {
+    "id": 1,
+    "name": "Vasiliy Kandinskiy",
+    "years": "1866 - 1944",
+    "genre": "Expressionism,Abstractionism",
+    "nationality": "Russian",
+    "bio": "Wassily Wassilyevich Kandinsky (Russian: Васи́лий Васи́льевич Канди́нский, tr. Vasíliy Vasílʹevich Kandínskiy) (16 December [O.S. 4 December] 1866 – 13 December 1944) was a Russian painter and art theorist.",
+    "wikipedia": "http://en.wikipedia.org/wiki/Wassily_Kandinsky",
+    "paintings": 88
+  },
+  {
+    "id": 3,
+    "name": "Claude Monet",
+    "years": "1840 - 1926",
+    "genre": "Impressionism",
+    "nationality": "French",
+    "bio": "Oscar-Claude Monet (; French: [klod mɔnɛ]; 14 November 1840 – 5 December 1926) was a French painter, a founder of French Impressionist painting and the most consistent and prolific practitioner of the movement's philosophy of expressing one's perceptions before nature, especially as applied to plein air landscape painting. The term \"Impressionism\" is derived from the title of his painting Impression, soleil levant (Impression, Sunrise), which was exhibited in 1874 in the first of the independent exhibitions mounted by Monet and his associates as an alternative to the Salon de Paris.Monet's ambition of documenting the French countryside led him to adopt a method of painting the same scene many times in order to capture the changing of light and the passing of the seasons. From 1883, Monet lived in Giverny, where he purchased a house and property and began a vast landscaping project which included lily ponds that would become the subjects of his best-known works. In 1899, he began painting the water lilies, first in vertical views with a Japanese bridge as a central feature and later in the series of large-scale paintings that was to occupy him continuously for the next 20 years of his life.",
+    "wikipedia": "http://en.wikipedia.org/wiki/Claude_Monet",
+    "paintings": 73
+  },
+];
+const firstArtistName = firstArtistsName[0].name;
+console.log(firstArtistName);
 
 
 //(2) Bio of the third artist (2nd index) in the array 
 
+var thirdArtist = {
 
+  name: "Leonardo da Vinci", bio: "Leonardo da Vinci was an Italian polymath..." ,
+  name: "Vincent van Gogh", bio: "Vincent van Gogh was a Dutch post-impressionist painter..." ,
+  name: "Diego Rivera", bio: "Diego Rivera was a prominent Mexican painter..." 
+};
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-(no function needed) 
-There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
+const thirdArtists = [
+  { name: "Leonardo da Vinci", bio: "Leonardo da Vinci was an Italian polymath..." },
+  { name: "Vincent van Gogh", bio: "Vincent van Gogh was a Dutch post-impressionist painter..." },
+    { name: "Diego Rivera", bio: "Diego Rivera was a prominent Mexican painter" }
+];
+
+const thirdArtistBio = artist[2].bio;
+console.log(thirdArtistBio);
 
 
 
@@ -230,11 +274,14 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(artistsArray, index) {
+  const artistName = artistsArray[index];
+  return `The artist at index ${index} is ${artistName}.`;
 }
 
-
+const artistsArray = ['Amedeo Modigliani', 'Vincent van Gogh', 'Pablo Picasso'];
+const artistString = getArtistByIndex(artistsArray, 0);
+console.log(artistString);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use listOfNames to do the following: 
@@ -244,11 +291,16 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(artistArray){
+  const artistsArray = [...artistsArray]
+
+  for(let i = 0; i < artistArray .length; i++)
+     artistArray = artistArray[i] .split (" ")[0]
+
+     var listOfNames =("Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera");
+     
+console.log(listOfNames)
 }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -259,11 +311,17 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(artistName) {
+  const copiedArtists = [...artist];
+  const indexToRemove = copiedArtists.findIndex(artist => artist.name === artistName);
+  if (indexToRemove !== -1) {
+    copiedArtists.splice(indexToRemove, 1);
+  }
+  return copiedArtists;
 }
 
-
+const updatedArtists = removeArtist("Amedeo Modigliani");
+console.log(updatedArtists[2].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -281,9 +339,30 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(artists, name, years, genre, nationality, bio){
+  const artistsCopy = [...artists];
+  const newArtist = [{
+    name: "Megan Huckabay",
+    years: "Feb. 23 1990 - Present",
+    genre: "Full Stack Web Developer",
+    nationality: "American",
+    bio:"Megan grew up in Porterville, California. She's following her dreams of becoming a web developer, and she is hoping to reach her goals by working for Google someday."
+}];
+  artistsCopy.push(newArtist);
+  return artistsCopy;
 }
+
+var newArtist = addArtist
+
+  {"Megan Huckabay"}
+  {"Feb. 23 1990 - Present"}
+  {"Full Stack Web Developer"}
+  {"American"}
+  {"Megan grew up in Porterville, California. She's following her dreams of becoming a web developer, and she is hoping to reach her goals by working for Google someday."
+};
+
+console.log(addArtist);
+
 
 
 
@@ -295,10 +374,36 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(artists) {
+  const prolificArtists = [];
+  for (let i = 0; i < artists.length; i++) {
+    const artist = artists[i];
+    if (artist.paintings > 100) {
+      prolificArtists.push(artist.name);
+    }
+  }
+  return prolificArtists;
 }
 
+const artists = [
+  { name: "Amedo Modigliani", paintings: 175 },
+  { name: "Rene Margitte", paintings: 194 },
+  { name: "Salvador Dali", paintings: 139 },
+  { name: "Vincent Can Gogh", paintings: 877 },
+  { name: "Gustuv Klimt", paintings: 117 },
+  { name: "Hieronymus Bosch", paintings: 137 },
+  { name: "Kazimir Melevich", paintings: 126 },
+  { name: "Mikhail Vrubel", paintings: 171 },
+  { name: "Pablo Picaso", paintings: 439 },
+  { name: "Peter Paul Rubens", paintings: 141 },
+  { name: "Pierre-Auguste Renoir", paintings: 336 },
+  { name: "Francisco Goya", paintings: 291 },
+  { name: "Frida Kahio", paintings: 120 },
+  { name: "Albrecht Dürer", paintings: 328 },
+];
+
+const prolificArtists = lotsOfArt(artists);
+console.log(prolificArtists);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -311,10 +416,31 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
+
+if (artist) {
+  let bio = `${artist.name} (${artist.years}), ${artist.nationality}, ${artist.biography}`;
+
 }
 
+
+var artistArray = [
+{
+  name: "Leonardo da Vinci",
+  years: "1452-1519",
+  nationality: "Italian",
+  biography:
+    "Leonardo da Vinci was an Italian artist, scientist, and inventor who is widely considered to be one of the greatest painters of all time. He is known for his iconic works such as the Mona Lisa and The Last Supper, as well as for his scientific and engineering contributions.",
+},
+{
+  name: "Pablo Picasso",
+  years: "1881-1973",
+  nationality: "Spanish",
+  biography:
+    "Pablo Picasso was a Spanish artist who is widely regarded as one of the most influential artists of the 20th century. He is known for co-founding the Cubist movement and for his iconic works such as Guernica and Les Demoiselles d'Avignon.",
+},
+];
+
+console.log(artistByCountry)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -327,10 +453,18 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
-}
+function artistByCountry(artists, nationality) {
+  const filteredArtists = artists.filter(artist => {
+    return artist.nationality === nationality && !artist.secondNationality;
+  });
 
+  const artistNames = filteredArtists.map(artist => {
+    return artist.name;
+  });
+
+  return artistNames;
+  console.log(artistByCountry)
+}
 
 
 /* ***** END OF TASKS ***** */
